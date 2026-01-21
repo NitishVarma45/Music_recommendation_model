@@ -8,8 +8,8 @@ nltk.download('punkt_tab')
 
 data = pd.read_csv('spotify_millsongdata.csv')
 data.drop(columns='link', inplace=True)
-
-data = data
+#taking only 5000 values for faster execution, taking whole data is better for efficient responses.
+data = data.sample(5000)
 
 data['text'] = (
     data['text']
